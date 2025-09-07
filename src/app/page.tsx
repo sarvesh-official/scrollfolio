@@ -1,4 +1,5 @@
 import { HackathonCard } from "@/components/hackathon-card";
+import { CertificationCard } from "@/components/certification-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
@@ -193,9 +194,49 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+      <section id="certifications">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 15}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Certifications
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Professional Certifications
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Continuous learning and skill validation through industry-recognized certifications.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
+            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+              {DATA.certifications.map((cert, id) => (
+                <BlurFade
+                  key={cert.title}
+                  delay={BLUR_FADE_DELAY * 17 + id * 0.05}
+                >
+                  <CertificationCard
+                    title={cert.title}
+                    issuer={cert.issuer}
+                    date={cert.date}
+                    credentialId={cert.credentialId}
+                    skills={cert.skills}
+                    url={cert.url}
+                    image={cert.image}
+                    certificateImage={cert.certificateImage}
+                  />
+                </BlurFade>
+              ))}
+            </ul>
+          </BlurFade>
+        </div>
+      </section>
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <BlurFade delay={BLUR_FADE_DELAY * 18}>
             <div className="space-y-3">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
                 Contact
@@ -208,12 +249,27 @@ export default function Page() {
                 <Link
                   href={DATA.contact.social.X.url}
                   className="text-blue-500 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   with a direct question on twitter
                 </Link>{" "}
                 and I&apos;ll respond whenever I can. I will ignore all
                 soliciting.
               </p>
+              <div className="mt-8 text-center">
+                <p className="text-muted-foreground">
+                  Check out my full portfolio at{" "}
+                  <Link
+                    href="https://sarvee.dev"
+                    className="text-blue-500 hover:underline font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    sarvee.dev
+                  </Link>
+                </p>
+              </div>
             </div>
           </BlurFade>
         </div>
