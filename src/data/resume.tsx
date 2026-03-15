@@ -83,28 +83,40 @@ export const DATA = {
 
   work: [
     {
+      company: "Pallo",
+      href: "https://pallo.ai",
+      badges: ["Current"],
+      location: "Remote",
+      title: "Software Engineer (Founding Team)",
+      logoUrl: "/pallo.png",
+      start: "Nov 2025",
+      end: "Present",
+      description:
+        "Built AI-powered learning tools including flashcard generation, an AI document editor, and a STEM video explanation generator. Implemented an LLM fallback architecture to improve reliability and reduce API costs. Developed engagement systems (streaks, milestones) and a token-to-credit usage model. Created internal developer tools including a Vercel log viewer and a GitHub Actions deploy workflow to reduce platform seat costs.",
+    },
+    {
       company: "Lowe's",
       href: "https://www.lowes.com",
       badges: [],
       location: "Remote / Bengaluru, India",
-      title: "Software Engineering Intern",
+      title: "Software Development Engineer Intern",
       logoUrl: "/lowes.png",
       start: "Aug 2024",
-      end: "Present",
+      end: "Feb 2025",
       description:
-        "Increased Sonar test coverage by 60% across a core repository by writing unit and integration tests. Fixed high-priority Snyk and Sonar bugs/vulnerabilities, improving system reliability and security. Currently working on an event correlation task to enhance observability. Worked onsite in Bengaluru for 2 months, collaborating closely with engineering teams.",
+        "Increased Sonar test coverage by 60% across a core repository through unit and integration testing. Resolved critical Snyk and Sonar vulnerabilities, improving reliability and security posture. Worked on event correlation tooling to improve observability and debugging of distributed systems.",
     },
     {
       company: "TrueHealthSearch",
       href: "https://truehealthsearch.com",
       badges: [],
       location: "Remote",
-      title: "Freelance Full-Stack Developer & UI Designer",
+      title: "Freelance Full-Stack Developer",
       logoUrl: "/ths.png",
       start: "Dec 2023",
       end: "Jun 2024",
       description:
-        "Built a user-friendly frontend with Figma, Next.js, and TypeScript to improve engagement. Migrated architecture from React (Vite) to Next.js 14, reducing build complexity and improving performance by 25%. Developed an AI-powered medical chatbot (ChatGPT API) with ICD-10 integration, reducing manual lookup time by 30%.",
+        "Built a medical search platform frontend using Next.js and TypeScript, improving usability and performance. Migrated architecture from React (Vite) to Next.js, improving performance and reducing build complexity. Integrated an AI medical chatbot with an ICD-10 dataset to streamline diagnosis lookup and information retrieval.",
     },
   ],
   education: [

@@ -1,0 +1,43 @@
+Got you. In the App Router, you only get the “Install” option when your app is actually installable (right manifest + service worker + HTTPS + a bit of user interaction). Here’s a quick, proven setup and a checklist to fix the missing install button.
+1) Add a proper web app manifest
+Create app/manifest.json (or app/manifest.ts if you prefer TS via MetadataRoute.Manifest) with at least name, start_url, display, and 192px/512px icons (maskable is best):
+{  "name": "My PWA",  "short_name": "MyPWA",  "start_url": "/",  "display": "standalone",  "background_color": "#ffffff",  "theme_color": "#ffffff",  "icons": [    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }  ]}
+Then point your metadata at it in app/layout.tsx:
+import type { Metadata, Viewport } from "next";
+export const metadata: Metadata = {  manifest: "/manifest.json",  appleWebApp: { capable: true, statusBarStyle: "default" }};export const viewport: Viewport = { themeColor: "#ffffff" };
+(Next.js’ manifest file-convention is documented here. (Next.js))
+2) Generate a service worker (easiest: next-pwa)
+Install and wrap your Next config:
+npm i @ducanh2912/next-pwa && npm i -D webpack
+next.config.js:
+const withPWA = require("@ducanh2912/next-pwa").default({ dest: "public" });module.exports = withPWA({  // your Next.js config});
+Build once (npm run build). This generates public/sw.js and registers it for you. Add icons and the manifest as above. Docs: steps + auto SW generation, App Router support. (ducanh-next-pwa.vercel.app)
+
+Prefer a custom SW? You can hand-roll one and register it in a Client Component, but next-pwa is the least-friction path. Example guides exist for custom SW/Serwist too. (mikekubn.cz)
+
+3) Serve over HTTPS and test install flow
+Chromium requires: HTTPS, a manifest, and a service worker with a fetch handler to consider the app installable. (Chrome for Developers)
+Optionally show your own “Install” button using the beforeinstallprompt event:
+// app/install-button.tsx (Client Component)"use client";import { useEffect, useState } from "react";
+export default function InstallButton() {  const [promptEvent, setPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);  const [visible, setVisible] = useState(false);
+  useEffect(() => {    const onBIP = (e: any) => {      e.preventDefault();      setPromptEvent(e);      setVisible(true);    };    window.addEventListener("beforeinstallprompt", onBIP);    return () => window.removeEventListener("beforeinstallprompt", onBIP);  }, []);
+  if (!visible) return null;
+  return (    <button      onClick={async () => {        if (!promptEvent) return;        const r = await promptEvent.prompt();        // r.outcome === 'accepted' | 'dismissed'        setVisible(false);      }}    >      Install app    </button>  );}
+(Add <InstallButton /> somewhere in your UI.) How this event works and why you need to show a custom button: (MDN Web Docs)
+If you still don’t see the install option, check these:
+
+Manifest actually loads at /manifest.json and is linked once. If you use a basePath or both a file and a metadata manifest URL, ensure they aren’t conflicting. (GitHub)
+Icons are valid PNGs at 192×192 and 512×512, referenced with correct paths. (ducanh-next-pwa.vercel.app)
+Service worker is active: DevTools → Application → Service Workers should show sw.js controlling the page; if not, do a hard reload/unregister old SWs. next-pwa in dev serves from network-only, so test with a production build locally (next build && next start) or on a deployed preview. (ducanh-next-pwa.vercel.app)
+User engagement heuristics: on Chrome, the browser may wait for a click and ~30s of presence before surfacing install UI. (Stack Overflow)
+HTTPS (localhost is allowed as “secure”). (Chrome for Developers)
+
+
+Minimal file list to copy in
+
+app/manifest.json (or app/manifest.ts) ✔
+public/icons/icon-192.png, public/icons/icon-512.png ✔
+next.config.js wrapped with @ducanh2912/next-pwa ✔
+Optional app/install-button.tsx and render it ✔
+
+If you paste your repo structure or error screenshots, I’ll pinpoint what’s blocking installability in your case.
