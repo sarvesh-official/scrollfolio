@@ -8,7 +8,7 @@ export const DATA = {
   location: "Tamil Nadu, India",
   locationLink: "https://www.google.com/maps/place/tamil+nadu+india",
   description:
-    "Software Engineer exploring Web3, building AI solutions, and giving back to the community.",
+    "AI Engineer building multi-agent systems, RAG pipelines, and production AI products.",
   avatarUrl: "/me.png",
   skills: [
     "Java",
@@ -154,7 +154,7 @@ export const DATA = {
       dates: "Mar 2025 – Mar 2026",
       active: true,
       description:
-        "AI-powered learning assistant that generates personalized courses and quizzes. Integrated Gemini 2.5 for conversational reasoning and document understanding. Used Google Docs API for OCR-based document ingestion and processing. Implemented chat with documents, secure file uploads, and vector search with Pinecone.",
+        "AI-powered learning assistant that generates personalized courses and quizzes. Integrated Gemini 2.5 for conversational reasoning and document understanding. Used Tesseract.js, Google Cloud Document AI, and Google Cloud Vision for OCR-based document ingestion and processing. Implemented chat with documents, secure file uploads, and vector search with Pinecone.",
       technologies: [
         "Next.js",
         "LangChain",
