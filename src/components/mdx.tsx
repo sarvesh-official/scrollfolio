@@ -91,3 +91,4 @@ export const globalComponents = {
 };
 
 // code block styling
+// syntax highlight
