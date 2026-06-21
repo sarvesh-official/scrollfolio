@@ -20,3 +20,4 @@ export function ModalPortal({ children, isOpen }: ModalPortalProps) {
 
   return createPortal(children, document.body);
 }
+
