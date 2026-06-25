@@ -95,3 +95,4 @@ export function CertificateImagePreview({ src, alt, title }: Props) {
     </>
   );
 }
+
