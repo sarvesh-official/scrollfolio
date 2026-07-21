@@ -149,31 +149,6 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Heedly",
-      href: "https://github.com/sarvesh-official/heedly",
-      dates: "Jul 2025 – Present",
-      active: true,
-      description:
-        "AI-powered notification intelligence for Android with on-device LLM. Built on-device AI notification classifier using Gemma 4 E4B via LiteRT-LM with GPU-first inference, classifying notifications as ALERT, SHOW, or DISMISS without cloud dependency. Designed per-app natural language rules system where users describe preferences in plain English for personalized notification triage.",
-      technologies: [
-        "Kotlin",
-        "Gemma",
-        "LiteRT-LM",
-        "Room",
-        "HuggingFace",
-        "On-device LLM",
-      ],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/sarvesh-official/heedly",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/heedly.png",
-      video: "",
-    },
-    {
       title: "Piper AI",
       href: "https://piper-ai.vercel.app/",
       dates: "Mar 2025 – Mar 2026",
@@ -203,31 +178,6 @@ export const DATA = {
         },
       ],
       image: "/projects/piper.png",
-      video: "",
-    },
-    {
-      title: "MetricLens",
-      href: "https://github.com/sarvesh-official/MetricLens",
-      dates: "2025",
-      active: true,
-      description:
-        "AI-powered observability tool that connects PostHog analytics to Slack. Ask questions in plain English, get human-friendly insights. Fetches data from PostHog, pipes it through OpenAI Codex for analysis, and delivers clear answers with insights, comparisons, and actionable takeaways. Runs automated daily and weekly reports on a cron schedule.",
-      technologies: [
-        "Node.js",
-        "AWS EC2",
-        "PostHog",
-        "Slack API",
-        "OpenAI Codex",
-        "PM2",
-      ],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/sarvesh-official/MetricLens",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/metriclens.png",
       video: "",
     },
     {
@@ -496,7 +446,7 @@ export const DATA = {
       ],
     },
   ],
-  summary: "I'm pursuing **Software Product Engineering** at Lovely Professional University (CGPA: 9.37/10). I'm currently working as an **Associate AI Engineer Intern at Lowe's**, building real-time data pipelines with Apache Kafka and Flink SQL. I've mentored **800+ students and police officers** through programming and cybersecurity sessions, and gained valuable experience from [3+ hackathons](/#hackathons). I enjoy **sharing knowledge**, building **AI-powered solutions**, and **giving back to the community**.",
+  summary: "I'm pursuing **Software Product Engineering** at Lovely Professional University. I've mentored **800+ students and police officers** through programming and cybersecurity sessions, and gained valuable experience from [3+ hackathons](/#hackathons). I enjoy **sharing knowledge**, building **AI-powered solutions**, and **giving back to the community**.",
   achievements: [
     {
       title: "Finalist at HackVerse 2024 (MERN Stack)",
