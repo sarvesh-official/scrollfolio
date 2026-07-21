@@ -4,11 +4,11 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Sarvesh P",
   initials: "SP",
-  url: "https://sarvesh-portfolio.vercel.app",
-  location: "Punjab, India",
-  locationLink: "https://www.google.com/maps/place/punjab+india",
+  url: "https://sarvee.page",
+  location: "Tamil Nadu, India",
+  locationLink: "https://www.google.com/maps/place/tamil+nadu+india",
   description:
-    "Software Engineer exploring Web3, building AI solutions, and giving back to the community.",
+    "Data & AI Engineer building scalable AI-powered applications and real-time data pipelines.",
   avatarUrl: "/me.png",
   skills: [
     "Java",
@@ -16,6 +16,7 @@ export const DATA = {
     "Python",
     "TypeScript",
     "JavaScript",
+    "Kotlin",
     "React",
     "Next.js",
     "Node.js",
@@ -23,9 +24,14 @@ export const DATA = {
     "Spring Boot",
     "Git",
     "Docker",
+    "AWS EC2",
     "AWS S3",
+    "Apache Kafka",
+    "Apache Flink SQL",
     "Pinecone",
     "MongoDB",
+    "PostgreSQL",
+    "Redis",
     "Convex",
     "Figma",
     "REST APIs",
@@ -62,7 +68,7 @@ export const DATA = {
       },
       Youtube: {
         name: "Youtube",
-        url: "https://www.youtube.com/@LearnWithSarvee",
+        url: "https://www.youtube.com/@i_am_sarvesh",
         icon: Icons.youtube,
         navbar: true,
       },
@@ -83,16 +89,28 @@ export const DATA = {
 
   work: [
     {
-      company: "Pallo",
-      href: "https://pallo.ai",
+      company: "Lowe's",
+      href: "https://www.lowes.com",
       badges: ["Current"],
-      location: "Remote",
-      title: "Software Engineer (Founding Team)",
-      logoUrl: "/pallo.png",
-      start: "Nov 2025",
+      location: "Bengaluru, India",
+      title: "Associate AI Engineer Intern",
+      logoUrl: "/lowes.png",
+      start: "May 2026",
       end: "Present",
       description:
-        "Built AI-powered learning tools including flashcard generation, an AI document editor, and a STEM video explanation generator. Implemented an LLM fallback architecture to improve reliability and reduce API costs. Developed engagement systems (streaks, milestones) and a token-to-credit usage model. Created internal developer tools including a Vercel log viewer and a GitHub Actions deploy workflow to reduce platform seat costs.",
+        "Working with Apache Flink SQL for real-time stream processing and Apache Kafka for event-driven data pipelines. Managing data ingestion and storage workflows using Amazon S3 as part of the data platform infrastructure. Transitioned from an SDE Intern role into an AI Engineering track, applying full-stack experience to AI-driven initiatives.",
+    },
+    {
+      company: "Pallo",
+      href: "https://pallo.ai",
+      badges: [],
+      location: "Remote",
+      title: "Founding Software Engineer Intern",
+      logoUrl: "/pallo.png",
+      start: "Feb 2026",
+      end: "Apr 2026",
+      description:
+        "Built AI-powered learning tools including an AI document editor and a STEM video explanation generator. Implemented an LLM fallback architecture to improve reliability and reduce API costs. Developed engagement systems (streaks, milestones) and a token-to-credit usage model. Created internal developer tools including a Vercel log viewer and a GitHub Actions deploy workflow to reduce platform seat costs.",
     },
     {
       company: "Lowe's",
@@ -102,7 +120,7 @@ export const DATA = {
       title: "Software Development Engineer Intern",
       logoUrl: "/lowes.png",
       start: "Aug 2024",
-      end: "Feb 2025",
+      end: "Feb 2026",
       description:
         "Increased Sonar test coverage by 60% across a core repository through unit and integration testing. Resolved critical Snyk and Sonar vulnerabilities, improving reliability and security posture. Worked on event correlation tooling to improve observability and debugging of distributed systems.",
     },
@@ -131,9 +149,34 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Heedly",
+      href: "https://github.com/sarvesh-official/heedly",
+      dates: "Jul 2025 – Present",
+      active: true,
+      description:
+        "AI-powered notification intelligence for Android with on-device LLM. Built on-device AI notification classifier using Gemma 4 E4B via LiteRT-LM with GPU-first inference, classifying notifications as ALERT, SHOW, or DISMISS without cloud dependency. Designed per-app natural language rules system where users describe preferences in plain English for personalized notification triage.",
+      technologies: [
+        "Kotlin",
+        "Gemma",
+        "LiteRT-LM",
+        "Room",
+        "HuggingFace",
+        "On-device LLM",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/sarvesh-official/heedly",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/heedly.png",
+      video: "",
+    },
+    {
       title: "Piper AI",
-      href: "https://piper.sarvee.dev/",
-      dates: "Jan 2025 – May 2025",
+      href: "https://piper-ai.vercel.app/",
+      dates: "Mar 2025 – Mar 2026",
       active: true,
       description:
         "AI-powered learning assistant that generates personalized courses and quizzes. Integrated Gemini 2.5 for conversational reasoning and document understanding. Used Google Docs API for OCR-based document ingestion and processing. Implemented chat with documents, secure file uploads, and vector search with Pinecone.",
@@ -150,7 +193,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://piper.sarvee.dev/",
+          href: "https://piper-ai.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
@@ -160,6 +203,31 @@ export const DATA = {
         },
       ],
       image: "/projects/piper.png",
+      video: "",
+    },
+    {
+      title: "MetricLens",
+      href: "https://github.com/sarvesh-official/MetricLens",
+      dates: "2025",
+      active: true,
+      description:
+        "AI-powered observability tool that connects PostHog analytics to Slack. Ask questions in plain English, get human-friendly insights. Fetches data from PostHog, pipes it through OpenAI Codex for analysis, and delivers clear answers with insights, comparisons, and actionable takeaways. Runs automated daily and weekly reports on a cron schedule.",
+      technologies: [
+        "Node.js",
+        "AWS EC2",
+        "PostHog",
+        "Slack API",
+        "OpenAI Codex",
+        "PM2",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/sarvesh-official/MetricLens",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/metriclens.png",
       video: "",
     },
     {
@@ -259,7 +327,7 @@ export const DATA = {
       dates: "2024",
       active: true,
       description:
-        "Developed lightweight extension to kill processes by port directly from VS Code. 60+ downloads on VS Code Marketplace.",
+        "Developed lightweight extension to kill processes by port directly from VS Code. 160+ installs on VS Code Marketplace.",
       technologies: [
         "JavaScript",
         "VS Code API",
@@ -428,7 +496,7 @@ export const DATA = {
       ],
     },
   ],
-  summary: "I'm pursuing **Software Product Engineering** at Lovely Professional University. I've mentored **800+ students and police officers** through programming and cybersecurity sessions, and gained valuable experience from [3+ hackathons](/#hackathons). I enjoy **sharing knowledge**, building **AI-powered solutions**, and **giving back to the community**.",
+  summary: "I'm pursuing **Software Product Engineering** at Lovely Professional University (CGPA: 9.37/10). I'm currently working as an **Associate AI Engineer Intern at Lowe's**, building real-time data pipelines with Apache Kafka and Flink SQL. I've mentored **800+ students and police officers** through programming and cybersecurity sessions, and gained valuable experience from [3+ hackathons](/#hackathons). I enjoy **sharing knowledge**, building **AI-powered solutions**, and **giving back to the community**.",
   achievements: [
     {
       title: "Finalist at HackVerse 2024 (MERN Stack)",
@@ -455,8 +523,8 @@ export const DATA = {
       description: "Maintained a consistent 50-day LeetCode streak and solved 270+ problems across platforms.",
     },
     {
-      title: "YouTube channel Learn With Sarvee with 2K+ subscribers",
-      description: "Created and maintained YouTube channel publishing tech content with over 2K subscribers.",
+      title: "YouTube channel with 2.11K+ subscribers",
+      description: "Created and maintained YouTube channel publishing tech content with over 2.11K subscribers.",
     },
   ],
   certifications: [
