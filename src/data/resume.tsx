@@ -8,7 +8,7 @@ export const DATA = {
   location: "Tamil Nadu, India",
   locationLink: "https://www.google.com/maps/place/tamil+nadu+india",
   description:
-    "Data & AI Engineer building scalable AI-powered applications and real-time data pipelines.",
+    "Software Engineer exploring Web3, building AI solutions, and giving back to the community.",
   avatarUrl: "/me.png",
   skills: [
     "Java",
