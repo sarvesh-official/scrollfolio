@@ -261,12 +261,12 @@ export default function Page() {
                 <p className="text-muted-foreground">
                   Check out my full portfolio at{" "}
                   <Link
-                    href="https://sarvee.dev"
+                    href="https://sarvee.in"
                     className="text-blue-500 hover:underline font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    sarvee.dev
+                    sarvee.in
                   </Link>
                 </p>
               </div>
